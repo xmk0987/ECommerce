@@ -1,0 +1,14 @@
+@use "../../../styles.scss" as vars;
+
+.header {
+  padding: vars.$gutter;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: vars.$background-color;
+}
+
+.header span {
+  font-size: 1.2rem;
+}

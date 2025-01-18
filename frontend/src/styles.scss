@@ -1,0 +1,138 @@
+// =============================================================================
+// Variables
+// =============================================================================
+
+// Color palette
+$primary-color: #3498db; // blue - primary action color
+$secondary-color: #2ecc71; // green - secondary actions/accents
+$accent-color: #e74c3c; // red - warning, error, or accent
+$text-color: #fff; // default text color
+$background-color: #1d1d1d; // background color
+
+// Typography
+$font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-size: 16px;
+$line-height: 1.6;
+
+// Spacing (example values, adjust as needed)
+$gutter: 1rem;
+
+// =============================================================================
+// CSS Reset & Base Styles
+// =============================================================================
+
+// Basic reset for margin, padding and box-sizing
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Set base font-size on html for rem calculations
+html {
+  font-size: $base-font-size;
+}
+
+// Set base styles for body
+body {
+  font-family: $font-family-base;
+  font-size: 1rem;
+  line-height: $line-height;
+  color: $text-color;
+  background-color: $background-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+// Remove default list styles on ul, ol
+ul,
+ol {
+  list-style: none;
+}
+
+// Remove default link decorations and set primary color
+a {
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Normalize form element appearance
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  margin: 0;
+}
+
+// Default button styles
+button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+// Ensure images are responsive by default
+img {
+  max-width: 100%;
+  display: block;
+}
+
+// Default typography styles for headings and paragraphs
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  margin-bottom: $gutter;
+  color: $text-color;
+}
+
+p {
+  margin-bottom: $gutter;
+}
+
+// =============================================================================
+// Layout Utilities
+// =============================================================================
+
+app-root {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  flex-direction: column;
+}
+
+// A central container to constrain content width
+@mixin container {
+  width: 90%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: $gutter;
+  overflow: auto;
+  min-height: 100vh;
+}
+
+// =============================================================================
+// Responsive Typography
+// =============================================================================
+
+// Adjust base font-size for medium devices
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}

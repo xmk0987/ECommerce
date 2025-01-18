@@ -1,0 +1,21 @@
+<!-- product-card.component.html -->
+<div class="product-card">
+  <!-- Product Image -->
+  <img class="product-image" [src]="product().image" [alt]="product().title" />
+
+  <!-- Product Details -->
+  <div class="product-details">
+    <!-- Product Title -->
+    <div class="product-title">
+      {{ product().title }}
+    </div>
+
+    <!-- Product Price -->
+    <div class="product-price">${{ product().price }}</div>
+
+    <!-- Product Stock -->
+    <div class="product-stock" *ngIf="product().stock !== undefined">
+      In Stock: {{ product().stock }}
+    </div>
+  </div>
+</div>
