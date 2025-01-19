@@ -2,6 +2,8 @@
 
 ECommerce application frontend. Reminding myself of Angular framework and about writing more clear tests.
 
+Products are fetched from Fake Store API and currently the cart is only made to persist through session storage.
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.2.
 
 ## Development server
@@ -13,7 +15,6 @@ ng serve
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
 
 ## Building
 

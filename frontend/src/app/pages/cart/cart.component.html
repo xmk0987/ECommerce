@@ -1,31 +1,61 @@
-<div class="cart-list">
-  <div
-    class="cart-item"
-    *ngFor="let cartItem of cartService.cart(); trackBy: trackById"
-  >
-    <div class="cart-item-info">
-      <img
-        class="product-image"
-        [src]="cartItem.image"
-        [alt]="cartItem.title"
-      />
-      <p>{{ cartItem.title }}</p>
-    </div>
-    <div class="quantity-controls">
-      <!-- Decrease Quantity Button -->
-      <app-primary-button
-        label="-"
-        (btnClicked)="cartService.decreaseQuantity(cartItem.id)"
-      ></app-primary-button>
+<div class="container">
+  <!-- Render the cart list only if there are items in the cart -->
+  <ng-container *ngIf="cartService.cart().length > 0; else emptyCart">
+    <div class="cart-list">
+      <div
+        class="cart-item"
+        *ngFor="let cartItem of cartService.cart(); trackBy: trackById"
+      >
+        <div class="cart-item-info">
+          <img
+            class="product-image"
+            [src]="cartItem.image"
+            [alt]="cartItem.title"
+          />
+          <p>{{ cartItem.title }}</p>
+        </div>
+        <div class="quantity-controls">
+          <!-- Decrease Quantity Button -->
+          <app-primary-button
+            label="-"
+            (btnClicked)="cartService.decreaseQuantity(cartItem.id)"
+          ></app-primary-button>
 
-      <!-- Display Current Quantity -->
-      <span class="quantity">{{ cartItem.quantity }}</span>
+          <!-- Display Current Quantity -->
+          <span class="quantity">{{ cartItem.quantity }}</span>
 
-      <!-- Increase Quantity Button -->
+          <!-- Increase Quantity Button -->
+          <app-primary-button
+            label="+"
+            (btnClicked)="cartService.increaseQuantity(cartItem.id)"
+          ></app-primary-button>
+        </div>
+      </div>
+    </div>
+    <div class="checkout">
+      <div class="checkout-info">
+        <p>Items:</p>
+        <p>{{ cartService.getTotalCartItems() }}</p>
+      </div>
+      <div class="checkout-info">
+        <p>Total:</p>
+        <p>${{ cartService.calculateTotal() }}</p>
+      </div>
       <app-primary-button
-        label="+"
-        (btnClicked)="cartService.increaseQuantity(cartItem.id)"
+        label="Go to Checkout"
+        (btnClicked)="cartService.goToCheckout()"
       ></app-primary-button>
     </div>
-  </div>
+  </ng-container>
+
+  <!-- Template for empty cart state -->
+  <ng-template #emptyCart>
+    <div class="emptyCart">
+      <p>Cart is Empty</p>
+      <app-primary-button
+        label="Go to shop"
+        routerLink="/"
+      ></app-primary-button>
+    </div>
+  </ng-template>
 </div>

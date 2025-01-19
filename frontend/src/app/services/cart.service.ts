@@ -81,6 +81,26 @@ export class CartService {
   }
 
   /**
+   * Calculate the total of the cart.
+   * @returns The total cost of all cart items, formatted to 2 decimal places.
+   */
+  calculateTotal(): number {
+    const total = this.cart().reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
+    return parseFloat(total.toFixed(2));
+  }
+
+  /**
+   * Calls the checkout process from the CartService.
+   */
+  goToCheckout(): void {
+    console.log('Items: ', this.cart());
+    console.log('Total: ', this.calculateTotal());
+  }
+
+  /**
    * Persist the current state of the cart in sessionStorage.
    */
   private persistCart(): void {

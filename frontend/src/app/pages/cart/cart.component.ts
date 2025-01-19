@@ -1,12 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { CartService } from '../../services/cart.service';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Product } from '../../models/products.models';
 import { PrimaryButtonComponent } from '../../components/primary-button/primary-button.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
-  imports: [NgFor, PrimaryButtonComponent],
+  imports: [NgFor, PrimaryButtonComponent, NgIf, RouterLink],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss',
 })
