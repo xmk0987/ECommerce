@@ -1,6 +1,6 @@
 # ECommerce
 
-ECommerce application frontend. Reminding myself of Angular framework and about writing more clear tests.
+ECommerce application frontend. Reminding myself of Angular framework and about writing unit tests.
 
 Products are fetched from Fake Store API and currently the cart is only made to persist through session storage.
 
