@@ -12,10 +12,6 @@
 
     <!-- Product Price -->
     <div class="product-price">${{ product().price }}</div>
-
-    <!-- Product Stock -->
-    <div class="product-stock" *ngIf="product().stock !== undefined">
-      In Stock: {{ product().stock }}
-    </div>
+    <app-primary-button label="Add to Cart"></app-primary-button>
   </div>
 </div>
