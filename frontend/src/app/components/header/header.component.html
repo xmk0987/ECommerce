@@ -1,6 +1,7 @@
 <div class="header">
-  <span>Angular ECommerce</span>
+  <button routerLink="/">Angular ECommerce</button>
   <app-primary-button
     [label]="'Cart (' + cartService.cart().length + ')'"
+    routerLink="/cart"
   ></app-primary-button>
 </div>
