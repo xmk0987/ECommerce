@@ -12,6 +12,9 @@
 
     <!-- Product Price -->
     <div class="product-price">${{ product().price }}</div>
-    <app-primary-button label="Add to Cart"></app-primary-button>
+    <app-primary-button
+      label="Add to Cart"
+      (btnClicked)="cartService.addToCart(product())"
+    ></app-primary-button>
   </div>
 </div>
