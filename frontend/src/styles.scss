@@ -16,6 +16,7 @@ $line-height: 1.6;
 
 // Spacing (example values, adjust as needed)
 $gutter: 1rem;
+$headerHeight: 60px;
 
 // =============================================================================
 // CSS Reset & Base Styles
@@ -135,6 +136,7 @@ app-root {
   padding: $gutter;
   overflow: auto;
   min-height: 100vh;
+  margin-top: $headerHeight;
 }
 
 // =============================================================================

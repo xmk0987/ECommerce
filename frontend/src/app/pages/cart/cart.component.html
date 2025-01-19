@@ -1,1 +1,31 @@
-<p>cart works!</p>
+<div class="cart-list">
+  <div
+    class="cart-item"
+    *ngFor="let cartItem of cartService.cart(); trackBy: trackById"
+  >
+    <div class="cart-item-info">
+      <img
+        class="product-image"
+        [src]="cartItem.image"
+        [alt]="cartItem.title"
+      />
+      <p>{{ cartItem.title }}</p>
+    </div>
+    <div class="quantity-controls">
+      <!-- Decrease Quantity Button -->
+      <app-primary-button
+        label="-"
+        (btnClicked)="cartService.decreaseQuantity(cartItem.id)"
+      ></app-primary-button>
+
+      <!-- Display Current Quantity -->
+      <span class="quantity">{{ cartItem.quantity }}</span>
+
+      <!-- Increase Quantity Button -->
+      <app-primary-button
+        label="+"
+        (btnClicked)="cartService.increaseQuantity(cartItem.id)"
+      ></app-primary-button>
+    </div>
+  </div>
+</div>

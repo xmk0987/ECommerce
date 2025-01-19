@@ -1,0 +1,32 @@
+@use "../../../styles.scss" as vars;
+
+.cart-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-item {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-item-info,
+.quantity-controls {
+  display: inline-flex;
+  gap: 20px;
+}
+
+.cart-item-info img {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.quantity-controls {
+  font-size: 1.3rem;
+  font-weight: 600;
+}

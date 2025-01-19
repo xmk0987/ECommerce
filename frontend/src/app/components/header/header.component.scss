@@ -1,12 +1,15 @@
 @use "../../../styles.scss" as vars;
 
 .header {
+  position: fixed;
+  top: 0;
   padding: vars.$gutter;
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   background-color: vars.$background-color;
+  height: vars.$headerHeight;
 }
 
 .header span {
